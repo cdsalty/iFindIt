@@ -8,7 +8,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, TextInput, Image} from 'react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -22,9 +22,8 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Image source={require("./images/logo.png")} />
+        <TextInput style={styles.textBox}/>
       </View>
     );
   }
@@ -35,7 +34,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#2C3048',
   },
   welcome: {
     fontSize: 20,
@@ -47,4 +46,8 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  textBox: {
+    color: '#F9F9F9',
+    fontSize: 55
+  }
 });
