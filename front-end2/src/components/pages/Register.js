@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import loginAction from '../../actions/loginAction';
+import registerAction from '../../actions/registerAction';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 
-class Login extends Component {
+class Register extends Component {
 
-    loginHandler = (e)=>{
+    registerHandler = (e)=>{
         e.preventDefault();
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
-        this.props.loginAction({
+        this.props.registerAction({
             email,
             password
         });
@@ -21,9 +21,9 @@ class Login extends Component {
 
         return (
             <div>
-                <form onSubmit={this.loginHandler}>
+                <form onSubmit={this.registerHandler}>
                     <fieldset>
-                        <label>Login</label>
+                        <label>Register</label>
                         <div>
                             <label>Email: </label>
                             <input type="email" name="email" id="email"/>
@@ -42,9 +42,9 @@ class Login extends Component {
 
 function mapDispatchToProps(dispatch){
     return bindActionCreators({
-        loginAction: loginAction
+        registerAction: registerAction
     },dispatch)
 }
 
 
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(Register);

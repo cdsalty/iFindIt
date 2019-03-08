@@ -8,6 +8,7 @@ const bcrypt = require('bcrypt');
 
 // Send data to database via POST
 router.post('/login', (req, res, next)=>{
+  console.log(req.body)
   const email = req.body.email;
   const password = req.body.password;
   const passwordQuery = `SELECT * FROM users WHERE email = ?`

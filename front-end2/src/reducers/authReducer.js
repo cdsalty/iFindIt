@@ -13,9 +13,12 @@
 // when dispatcher runs this function, you HAVE to return something even if no change
 
 function authReducer(state = null, action){
-    if(action.type === "LOGIN"){
+    if(action.type === "LOGIN_ACTION"){
         // do stuff
-        return state
+        console.log(action.payload.data)
+        return action.payload.data;
+    }else if(action.type === "REGISTER_ACTION"){
+        return action.payload.data
     }else{
         return state
     }
