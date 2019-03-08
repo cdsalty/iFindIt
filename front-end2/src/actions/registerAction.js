@@ -8,7 +8,7 @@ import axios from 'axios';
 export default (formData)=>{
     console.log('register action ran!')
     console.log(formData)
-    const loginPromise = axios({
+    const registerPromise = axios({
         url: `http://localhost:3000/register`,
         method: 'POST',
         data: formData
@@ -16,7 +16,7 @@ export default (formData)=>{
 
     return{
         type: 'REGISTER_ACTION',
-        payload: loginPromise
+        payload: registerPromise
     }
 
 }
