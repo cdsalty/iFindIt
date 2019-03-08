@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const config = require('../config');
 const connection = mysql.createConnection(config);
 connection.connect();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt-nodejs');
 
 // Send data to database via POST
 router.post('/login', (req, res, next) => {
@@ -42,7 +42,10 @@ router.post('/login', (req, res, next) => {
 router.post('/register', (req, res) => {
   console.log('route hit')
   const email = req.body.email
+  console.log('======================')
   const hashedPassword = bcrypt.hashSync(req.body.password)
+  console.log('======================')
+  console.log('route hit')
   const selectQuery = `SELECT * FROM users WHERE email = ?;`
   connection.query(selectQuery, [email], (error, results) => {
     if (error) {
