@@ -31,7 +31,8 @@
     justify-content: center;
     width: 100%; */
     display: grid;
-    grid-template-columns: 5% 10% auto 10% 5%
+    grid-template-columns: 5% 10% auto 10% 5%;
+    
 }
 
 .home .poster-holder{

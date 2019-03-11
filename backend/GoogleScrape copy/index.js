@@ -6,27 +6,34 @@
 // // const url ='https://news.ycombinator.com/';
 
 
-const axios = require(`axios`);
-const cheerio = require(`cheerio`);
+// function scraper(movie){
 
 
-const url = `https://www.google.com/search?q=tangled`;
-// const url =‘https://news.ycombinator.com/’;
 
-const config = {
-    headers: {
-        'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
-    }
-};
+    const axios = require(`axios`);
+    const cheerio = require(`cheerio`);
 
-axios.get(url,config)
-   .then(response=>{
-    const $ = cheerio.load(response.data);
-    console.log($('.phXTff').text())
-    // console.log(response.data);
-   })
-   .catch(error=>{
-       console.log(error);
-   })
 
-   // Now we are getting back two different divs; we need to map through the divs to return a list of each.
+    const url = `https://www.google.com/search?q=tangled`;
+    // const url =‘https://news.ycombinator.com/’;
+
+    const config = {
+        headers: {
+            'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1',
+        }
+    };
+
+    axios.get(url,config)
+    .then(response=>{
+        const $ = cheerio.load(response.data);
+        // console.log($)
+        const results = $('.phXTff').text()
+        console.log(results)
+        // console.log(response.data);
+    })
+    .catch(error=>{
+        console.log(error);
+    })
+
+    // Now we are getting back two different divs; we need to map through the divs to return a list of each.
+// }
