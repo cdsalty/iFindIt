@@ -1,0 +1,48 @@
+.home{
+    background-color: #F9F9F9;
+    
+}
+
+.home .logo-holder{
+    display: flex;
+    justify-content: center;
+    background-color: #2C3048;
+    margin-bottom: 5px;
+}
+
+.home .button{
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #A6D2D7;
+    border: 2px solid #203E6E;
+    margin: 5px;
+
+
+}
+
+.home .button-holder{
+    position: absolute;
+    right: 50px;
+    top: 50px;
+}
+
+.home .poster-wrapper{
+    /* display: flex;
+    justify-content: center;
+    width: 100%; */
+    display: grid;
+    grid-template-columns: 5% 10% auto 10% 5%
+}
+
+.home .poster-holder{
+    grid-column-start: 3
+    
+}
+
+
+.home .poster{
+    display: inline-block;
+    
+    margin: 5px;
+
+}
