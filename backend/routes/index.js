@@ -2,9 +2,10 @@ var express = require('express');
 var router = express.Router();
 const mysql = require('mysql');
 const config = require('../config');
-const connection = mysql.createConnection(config);
+const connection = mysql.createConnection(config.config);
 connection.connect();
 const bcrypt = require('bcrypt-nodejs');
+const axios = require("axios");
 
 // Send data to database via POST
 router.post('/login', (req, res, next) => {
@@ -69,6 +70,19 @@ router.post('/register', (req, res) => {
       })
     }
   })
+})
+
+
+router.get('/getPopMovies', (req,res)=>{
+  const movieURL = `https://api.themoviedb.org/3/discover/movie?api_key=${config.movieApi}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
+  axios.get(movieURL)
+  .then((results)=>{
+    console.log("+++++++++++++++++++++++++" +results.data)
+    res.json(results.data.results)
+  })
+  .catch((error)=>{
+    console.log(error)
+  });
 })
 
 

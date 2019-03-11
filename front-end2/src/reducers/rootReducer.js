@@ -8,9 +8,11 @@
 
 import { combineReducers } from 'redux';
 import authReducer from './authReducer';
+import movieReducer from './movieReducer';
 
 const rootReducer = combineReducers({
     auth: authReducer,
+    popMovie: movieReducer,
 })
 
 export default rootReducer;
