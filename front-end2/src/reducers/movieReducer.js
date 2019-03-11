@@ -15,7 +15,7 @@
 function movieReducer(state = null, action){
     if(action.type === "POP_MOVIE"){
         // do stuff
-        console.log(action.payload.data)
+        // console.log(action.payload.data)
         return action.payload.data;
     }else{
         return state
