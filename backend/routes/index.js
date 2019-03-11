@@ -5,6 +5,7 @@ const config = require('../config');
 const connection = mysql.createConnection(config);
 connection.connect();
 const bcrypt = require('bcrypt-nodejs');
+const moviePoster = ``
 
 // Send data to database via POST
 router.post('/login', (req, res, next) => {
@@ -70,6 +71,17 @@ router.post('/register', (req, res) => {
     }
   })
 })
+
+router.post('/search',(req, res)=>{
+  const movieTitle = req.body.movieTitle;
+  request.get(searchUrl,(error,response,body)=>{
+    const parsedData = JSON.parse(body);
+    res.render('now_playing',{
+      moviePoster,
+      parsedData: parsedData.results
+    });
+  });
+});
 
 
 module.exports = router;
