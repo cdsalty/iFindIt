@@ -5,6 +5,8 @@ const config = require('../config');
 const connection = mysql.createConnection(config.config);
 connection.connect();
 const bcrypt = require('bcrypt-nodejs');
+
+const moviePoster = `01ea2102421546c752e7cfc8ec078b18f2f9b76e`
 const axios = require("axios");
 
 // Send data to database via POST
@@ -71,6 +73,17 @@ router.post('/register', (req, res) => {
     }
   })
 })
+
+router.post('/search',(req, res)=>{
+  const movieTitle = req.body.movieTitle;
+  request.get(searchUrl,(error,response,body)=>{
+    const parsedData = JSON.parse(body);
+    res.render('now_playing',{
+      moviePoster,
+      parsedData: parsedData.results
+    });
+  });
+});
 
 
 router.get('/getPopMovies', (req,res)=>{
