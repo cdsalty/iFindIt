@@ -5,8 +5,6 @@ const config = require('../config');
 const connection = mysql.createConnection(config.config);
 connection.connect();
 const bcrypt = require('bcrypt-nodejs');
-
-
 const axios = require("axios");
 
 // Send data to database via POST
@@ -97,6 +95,13 @@ router.get('/getPopMovies', (req,res)=>{
     console.log(error)
   });
 })
+
+
+router.post('/scraperResults',(req, res)=>{
+  const scraperResults= req.body.scrapeQuery;
+})
+
+
 
 
 module.exports = router;
