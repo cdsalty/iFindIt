@@ -22,7 +22,7 @@ function scraper(movie){
         }
     };
 
-    axios.get(url,config)
+    const results = axios.get(url,config)
     .then(response=>{
         const $ = cheerio.load(response.data);
         // console.log($)
@@ -35,7 +35,11 @@ function scraper(movie){
         console.log(error);
     })
 
+    return results
 //     Now we are getting back two different divs; we need to map through the divs to return a list of each.
 }
+
+
+// scraper("tangled")
 
 module.exports = scraper;
