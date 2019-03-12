@@ -6,7 +6,7 @@ import titleSearchAction from '../../actions/titleSearchAction';
 class Card extends Component{
 
     titleSearch = ()=>{
-        const scrapeQuery = `${this.props.title} ${this.props.releaseDate} movie`
+        const scrapeQuery = `${this.props.title} movie`
         console.log(scrapeQuery)
         this.props.titleSearchAction({
             scrapeQuery

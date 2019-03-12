@@ -79,7 +79,7 @@ router.post('/search',(req, res)=>{
     const movieUrl = `https://api.themoviedb.org/3/search/movie?api_key=fec8b5ab27b292a68294261bb21b04a5&language=en-US&query=${movieTitle}&page=1&include_adult=false`
     axios.get(movieUrl)
     .then((results)=>{
-      console.log(results.data)
+      // console.log(results.data)
       res.json(results.data)
     })
 });
@@ -100,15 +100,27 @@ router.get('/getPopMovies', (req,res)=>{
 
 router.post('/scraperResults',(req, res)=>{
   const scraperQuery = req.body.scrapeQuery;
-  const results = new Promise((resolve, reject)=>{
-    const results = scraper(scraperQuery)
-    resolve(scraper(results))
-  }).then((scraperResults)=>{
-    console.log(scraperResults)
+  console.log(scraperQuery)
+  const results = scraper(scraperQuery)
+  console.log("results inside promise " + results)
+  results.then((results)=>{
+    
+    res.json(results)
   })
 })
 
+  // router.post('/scraperResults', (req,res)=>{
+  //   const scrapeQuery = req.body.scrapeQuery;
+  //   console.log(scrapeQuery)
+  //   async ()=>{
+  //     console.log("entered async")
+  //     const scrapeResults = scraper(scrapeQuery)
+  //     console.log("scrapeResults " +scrapeResults)
+  //     res.json("route ended " + scrapeResults)
+  //   }
+    
+  // })
 
-// scraper(scraperQuery)
+
 
 module.exports = router;
