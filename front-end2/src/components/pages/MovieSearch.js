@@ -21,7 +21,7 @@ class MovieSearch extends Component {
     
 
     render() {
-
+        console.log(this.props.movie)
 
         if (this.props.movie === null) {
             return (
@@ -31,11 +31,11 @@ class MovieSearch extends Component {
                 </form>
             )
         } else {
-            // console.log(this.props.movie)
+            console.log(this.props.movie.results)
             const movieSearch = this.props.movie.results.map((movie, index) => {
                 const imagePath = `http://image.tmdb.org/t/p/w300${movie.poster_path}`
                 return (
-                    <Card key={index} imagePath={imagePath} releaseDate={movie.release_date} />
+                    <Card key={index} imagePath={imagePath} releaseDate={movie.release_date} title={movie.title} />
                 )
             })
             return (
@@ -52,7 +52,7 @@ class MovieSearch extends Component {
 }
 
 function mapStateToProps(state) {
-    // console.log(state.movie)
+    console.log(state.movie)
     return {
         movie: state.movie
     }

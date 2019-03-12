@@ -8,15 +8,15 @@ import axios from 'axios';
 export default (formData)=>{
     console.log('movie Search action ran!')
     console.log(formData)
-    const titlePromise = axios({
+    const moviePromise = axios({
         url: `http://localhost:3000/search`,
         method: 'POST',
         data: formData
     })
-    // console.log(titlePromise)
+    // console.log(moviePromise)
     return{
         type: 'MOVIE_SEARCH',
-        payload: titlePromise
+        payload: moviePromise
     }
 
 }

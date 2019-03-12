@@ -8,16 +8,16 @@ class Card extends Component{
     titleSearch = ()=>{
         const scrapeQuery = `${this.props.title} ${this.props.releaseDate} movie`
         console.log(scrapeQuery)
-        this.props.titleSearch({
+        this.props.titleSearchAction({
             scrapeQuery
         })
 
     }
 
     render(){
+        // console.log(this.props)
         return(
             <div>
-                
                 <img src={this.props.imagePath} alt={this.props.title + ' movie poster'}/>
                 <h1>{this.props.title}</h1>
                 <button onClick={this.titleSearch}>Where's it playing?</button>
@@ -27,12 +27,6 @@ class Card extends Component{
     }
 }
 
-function mapStateToProps(state) {
-    // console.log(state.movie)
-    return {
-        movie: state.movie
-    }
-}
 
 function mapDispatchToProps(dispatch){
     return bindActionCreators({
@@ -40,4 +34,4 @@ function mapDispatchToProps(dispatch){
     }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Card);
+export default connect(null, mapDispatchToProps)(Card);

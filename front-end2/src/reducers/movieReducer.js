@@ -1,4 +1,4 @@
-import { bindActionCreators } from "redux";
+
 
 // This is a reducer.
 // To make a reducer:
@@ -19,11 +19,12 @@ function movieReducer(state = null, action){
         // do stuff
         // console.log(action.payload.data)
         return action.payload.data;
-    }else if(bindActionCreators.typye === "MOVIE_SEARCH"){
-        console.log(action.payload.data)
+    }else if(action.type === 'MOVIE_SEARCH'){
+        // console.log(action.payload.data)
+        console.log("movie_search reducer hit")
         return action.payload.data;
     }else if(action.type === "TITLE_SEARCH"){
-        console.log(action.payload.data)
+        // console.log(action.payload.data)
         return action.payload.data;
     }else{
         return state
