@@ -35,7 +35,7 @@ class MovieSearch extends Component {
             const movieSearch = this.props.movie.results.map((movie, index) => {
                 const imagePath = `http://image.tmdb.org/t/p/w300${movie.poster_path}`
                 return (
-                    <Card key={index} imagePath={imagePath} title={movie.title} releaseDate={movie.release_date} />
+                    <Card key={index} imagePath={imagePath} releaseDate={movie.release_date} />
                 )
             })
             return (

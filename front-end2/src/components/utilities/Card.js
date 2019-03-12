@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// import { bindActionCreators} from 'redux';
 
 class Card extends Component{
 
     titleSearch = ()=>{
-        const scrapeQuery = `${this.props.title} ${this.props.releaseDate}`
+        const scrapeQuery = `${this.props.title} ${this.props.releaseDate} movie`
         console.log(scrapeQuery)
+        this.props.titleSearch({
+            scrapeQuery
+        })
+
     }
 
     render(){
@@ -28,5 +33,11 @@ function mapStateToProps(state) {
     }
 }
 
+// function mapDispatchToProps(dispatch){
+//     return bindActionCreators({
+//         titleSearchAction: titleSearchAction
+//     }, dispatch)
+// }
 
+// export default connect(mapStateToProps, mapDispatchToProps)(Card);
 export default connect(mapStateToProps)(Card);
