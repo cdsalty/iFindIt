@@ -6,7 +6,7 @@ const connection = mysql.createConnection(config.config);
 connection.connect();
 const bcrypt = require('bcrypt-nodejs');
 
-const moviePoster = `01ea2102421546c752e7cfc8ec078b18f2f9b76e`
+
 const axios = require("axios");
 
 // Send data to database via POST
@@ -75,14 +75,14 @@ router.post('/register', (req, res) => {
 })
 
 router.post('/search',(req, res)=>{
-  const movieTitle = req.body.movieTitle;
-  request.get(searchUrl,(error,response,body)=>{
-    const parsedData = JSON.parse(body);
-    res.render('now_playing',{
-      moviePoster,
-      parsedData: parsedData.results
-    });
-  });
+    console.log(req.body)
+    const movieTitle = req.body.movieTitle
+    const movieUrl = `https://api.themoviedb.org/3/search/movie?api_key=fec8b5ab27b292a68294261bb21b04a5&language=en-US&query=${movieTitle}&page=1&include_adult=false`
+    axios.get(movieUrl)
+    .then((results)=>{
+      console.log(results.data)
+      res.json(results.data)
+    })
 });
 
 

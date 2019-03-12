@@ -17,6 +17,9 @@ function movieReducer(state = null, action){
         // do stuff
         // console.log(action.payload.data)
         return action.payload.data;
+    }else if(action.type === "TITLE_SEARCH"){
+        console.log(action.payload.data)
+        return action.payload.data;
     }else{
         return state
     }

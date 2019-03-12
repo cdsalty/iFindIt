@@ -12,7 +12,7 @@ import movieReducer from './movieReducer';
 
 const rootReducer = combineReducers({
     auth: authReducer,
-    popMovie: movieReducer,
+    movie: movieReducer,
 })
 
 export default rootReducer;
