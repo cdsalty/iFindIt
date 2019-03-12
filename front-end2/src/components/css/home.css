@@ -1,22 +1,31 @@
-.home{
+/* .home{
     background-color: #F9F9F9;
     
+} */
+html{
+    overflow: hidden;
+    height: 100%;
 }
-
+body{
+    height: 100%;
+    overflow: auto;
+}
 .home .logo-holder{
     display: flex;
     justify-content: center;
     background-color: #2C3048;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
+    padding-bottom: 0px;
+
 }
 
 .home .button{
     padding: 15px;
-    border-radius: 15px;
+    border-radius: 10%;
     background-color: #A6D2D7;
     border: 2px solid #203E6E;
     margin: 5px;
-
+    font-size: 20px;    
 
 }
 
@@ -26,13 +35,24 @@
     top: 50px;
 }
 
+.home .buttonSearch {
+    
+    left: 50px;
+    top: 50px;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 14%;
+    background-color: #A6D2D7;
+    border: 2px solid #203E6E;
+    margin: 5px;
+}
+
+
 .home .poster-wrapper{
-    /* display: flex;
-    justify-content: center;
-    width: 100%; */
+    width: 100%; 
     display: grid;
     grid-template-columns: 5% 10% auto 10% 5%;
-    
+
 }
 
 .home .poster-holder{
@@ -47,3 +67,8 @@
     margin: 5px;
 
 }
+
+.poster-wrapper{
+    
+    background-color: #4D82A0;
+} 

@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import movieSearchAction from '../../actions/movieSearchAction';
 import { connect } from 'react-redux';
 import Card from '../utilities/Card';
+import "../css/home.css";
 
 class MovieSearch extends Component {
 
@@ -39,12 +40,14 @@ class MovieSearch extends Component {
                 )
             })
             return (
-                <div>
+                <div className = "container">
+                    <div className= "bodySearch">
                     <form onSubmit={this.movieSearchHandler}>
                         <input type="text" id="movieTitle" name="movieTitle" placeholder="Enter your movie search here" />
                         <input type="submit" value="Search" />
                     </form>
                     {movieSearch}
+                    </div>
                 </div>
             )
         }

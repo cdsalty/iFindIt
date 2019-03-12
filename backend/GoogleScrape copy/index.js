@@ -20,11 +20,9 @@ function scraper(movie){
         .then(response=>{
             const $ = cheerio.load(response.data);
             // console.log($)
-            const results = $('.phXTff').each((x)=>{
-                console.log(x.children)
-            })
+            const results = $('.phXTff').text();
             // console.log(results)
-            // console.log("results " +results)
+            // console.log("results " + results)
             resolve(results);
             // console.log(response.data);
         })
@@ -37,6 +35,6 @@ function scraper(movie){
 }
 
 
-scraper("tangled")
+// scraper("tangled")
 
 module.exports = scraper;
