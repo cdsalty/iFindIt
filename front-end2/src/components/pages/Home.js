@@ -27,7 +27,7 @@ class Home extends Component{
         console.log(newProps)
         this.setState({
 
-            popMovies: newProps.popMovie.map((movie, index)=>{
+            popMovies: newProps.movie.map((movie, index)=>{
                 const imagePath = `http://image.tmdb.org/t/p/w300${movie.poster_path}`;
                 return(
                     <Poster key={index} imagePath={imagePath} title={movie.original_title} />
@@ -68,7 +68,7 @@ function mapDispatchToProps(dispatch){
 
 function mapStateToProps(state){
     return{
-        popMovie : state.popMovie
+        movie : state.movie
     }
 }
 
