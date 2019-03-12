@@ -6,7 +6,7 @@
 // // const url ='https://news.ycombinator.com/';
 
 
-// function scraper(movie){
+function scraper(movie){
 
 
 
@@ -14,8 +14,7 @@
     const cheerio = require(`cheerio`);
 
 
-    const url = `https://www.google.com/search?q=tangled`;
-    // const url =‘https://news.ycombinator.com/’;
+    const url = `https://www.google.com/search?q=${movie}`;
 
     const config = {
         headers: {
@@ -29,11 +28,14 @@
         // console.log($)
         const results = $('.phXTff').text()
         console.log(results)
+        return results;
         // console.log(response.data);
     })
     .catch(error=>{
         console.log(error);
     })
 
-    // Now we are getting back two different divs; we need to map through the divs to return a list of each.
-// }
+//     Now we are getting back two different divs; we need to map through the divs to return a list of each.
+}
+
+module.exports = scraper;

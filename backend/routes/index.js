@@ -6,6 +6,7 @@ const connection = mysql.createConnection(config.config);
 connection.connect();
 const bcrypt = require('bcrypt-nodejs');
 const axios = require("axios");
+const scraper = require("../GoogleScrape copy/index");
 
 // Send data to database via POST
 router.post('/login', (req, res, next) => {
@@ -98,10 +99,16 @@ router.get('/getPopMovies', (req,res)=>{
 
 
 router.post('/scraperResults',(req, res)=>{
-  const scraperResults= req.body.scrapeQuery;
+  const scraperQuery = req.body.scrapeQuery;
+  const results = new Promise((resolve, reject)=>{
+    const results = scraper(scraperQuery)
+    resolve(scraper(results))
+  }).then((scraperResults)=>{
+    console.log(scraperResults)
+  })
 })
 
 
-
+// scraper(scraperQuery)
 
 module.exports = router;
