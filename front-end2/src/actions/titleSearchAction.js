@@ -6,17 +6,17 @@
 import axios from 'axios';
 
 export default (formData)=>{
-    console.log('movie Search action ran!')
+    console.log('title action ran!')
     console.log(formData)
-    const titlePromise = axios({
-        url: `http://localhost:3000/search`,
+    const scraperPromise = axios({
+        url: `http://localhost:3000/scraperResults`,
         method: 'POST',
         data: formData
     })
-    // console.log(titlePromise)
+
     return{
-        type: 'MOVIE_SEARCH',
-        payload: titlePromise
+        type: 'TITLE_SEARCH',
+        payload: scraperPromise
     }
 
 }

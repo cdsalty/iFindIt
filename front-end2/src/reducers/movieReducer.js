@@ -1,3 +1,5 @@
+import { bindActionCreators } from "redux";
+
 // This is a reducer.
 // To make a reducer:
 // 1. make a function that has 2 params:
@@ -16,6 +18,9 @@ function movieReducer(state = null, action){
     if(action.type === "POP_MOVIE"){
         // do stuff
         // console.log(action.payload.data)
+        return action.payload.data;
+    }else if(bindActionCreators.typye === "MOVIE_SEARCH"){
+        console.log(action.payload.data)
         return action.payload.data;
     }else if(action.type === "TITLE_SEARCH"){
         console.log(action.payload.data)

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { bindActionCreators} from 'redux';
+import { bindActionCreators} from 'redux';
+import titleSearchAction from '../../actions/titleSearchAction';
 
 class Card extends Component{
 
@@ -33,11 +34,10 @@ function mapStateToProps(state) {
     }
 }
 
-// function mapDispatchToProps(dispatch){
-//     return bindActionCreators({
-//         titleSearchAction: titleSearchAction
-//     }, dispatch)
-// }
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({
+        titleSearchAction: titleSearchAction
+    }, dispatch)
+}
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Card);
-export default connect(mapStateToProps)(Card);
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
