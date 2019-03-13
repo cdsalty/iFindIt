@@ -26,13 +26,18 @@ function scraper(movie) {
 
                 const results = $('.phXTff').parent().text()
 
+                console.log("results is a " + typeof results)
+
                 const splitArray = results.split("Watch")
+
+                console.log("splitArray is a " + typeof splitArray)
 
                 // console.log(splitStr)
                 const finalArray = splitArray.map((index) => {
                     return index.replace("F", " F")
                 })
 
+                console.log("finalArray is a " + typeof finalArray)
                 console.log(finalArray)
 
                 resolve(finalArray);

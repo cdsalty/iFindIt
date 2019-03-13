@@ -11,6 +11,7 @@ class Card extends Component{
         this.props.titleSearchAction({
             scrapeQuery
         })
+        this.props.reroute()
 
     }
 

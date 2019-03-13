@@ -16,7 +16,7 @@
 
 function scrapeReducer(state = null, action){
     if(action.type === "TITLE_SEARCH"){
-        console.log(action.payload.data)
+        console.log(typeof action.payload.data)
         return action.payload.data;
     }else{
         return state

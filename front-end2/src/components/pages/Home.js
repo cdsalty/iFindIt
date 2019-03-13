@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import popMoviesAction from '../../actions/popMoviesAction';
 import { bindActionCreators} from 'redux'
 import { connect } from "react-redux";
@@ -24,7 +23,7 @@ class Home extends Component{
     }
 
     componentWillReceiveProps(newProps){
-        console.log(newProps)
+        // console.log(newProps)
         this.setState({
 
             popMovies: newProps.movie.map((movie, index)=>{
@@ -38,7 +37,7 @@ class Home extends Component{
     }
 
     render(){
-       
+    //    console.log(this.props)
         return (
             <div className="home">
             
