@@ -2,9 +2,19 @@ import React, { Component } from 'react';
 import registerAction from '../../actions/registerAction';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import SweetAlert from 'sweetalert-react';
+import "sweetalert/dist/sweetalert.css";
 
 
 class Register extends Component {
+    constructor(){
+        super()
+        this.state = {
+            showAlert: false,
+            title: '',
+            text: "", 
+        }
+    }
 
     registerHandler = (e)=>{
         e.preventDefault();
@@ -15,12 +25,31 @@ class Register extends Component {
             password
         });
     }
+
+    componentWillReceiveProps(newProps){
+        console.log(newProps)
+        if(newProps.auth.message === "emailTaken"){
+            this.setState({
+                showAlert: true,
+                title: 'Email taken!',
+                text: "This email is already in our system.", 
+            })
+        }else if(newProps.auth.message === "regSuccess"){
+            this.props.history.push('/search')
+        }
+    }
     
 
     render() {
 
         return (
             <div>
+                <SweetAlert
+                    show={this.state.showAlert}
+                    title={this.state.title}
+                    text={this.state.text}
+                    onConfirm={() => this.setState({ showAlert: false })}
+                />
                 <form onSubmit={this.registerHandler}>
                     <fieldset>
                         <label>Register</label>
@@ -39,6 +68,11 @@ class Register extends Component {
         )
     }
 }
+function mapStateToProps(state){
+    return{
+        auth: state.auth
+    }
+}
 
 function mapDispatchToProps(dispatch){
     return bindActionCreators({
@@ -47,4 +81,4 @@ function mapDispatchToProps(dispatch){
 }
 
 
-export default connect(null, mapDispatchToProps)(Register);
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

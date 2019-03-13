@@ -55,7 +55,7 @@ router.post('/register', (req, res) => {
     } else if (results.length > 0) {
       // email already in system
       res.json({
-        msg: "emailTaken"
+        message: "emailTaken"
       })
     } else {
       const insertQuery = `INSERT INTO users(email, password)
@@ -65,7 +65,7 @@ router.post('/register', (req, res) => {
           throw error
         } else {
           res.json({
-            msg: 'regSuccess'
+            message: 'regSuccess'
           })
         }
       })
