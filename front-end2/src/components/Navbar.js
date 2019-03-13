@@ -12,12 +12,14 @@ class Navbar extends Component {
                 <div className="logo-holder">
                     <img src="/images/logo.png" alt="logo" />
                 </div>
-                <div className="search-button">
-                    <Link to="/search" input type="text" placeholder><button className="button">Search for Movies</button></Link>
-                </div>
                 <div className="button-holder">
                     <Link to="/login"><button className="button">Login</button></Link>
                     <Link to="/register"><button className="button">Register</button></Link>
+                </div>
+                <div className="search-bar">
+                    <form onSubmit={this.movieSearchHandler}>
+                        <input type="text" id="movieTitle" name="movieTitle" placeholder="Enter your movie search here" />
+                    </form>
                 </div>
             </div>
         )

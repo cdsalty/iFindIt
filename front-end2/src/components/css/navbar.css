@@ -1,8 +1,68 @@
 .navbar{
     background-color: #2C3048;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    
+    
 }
 
 .navbar button{
     background-color: #4D82A0;
-    border: 2px solid #2C3048;
+    border: 2px solid #203E6E;
+    padding: 10px;
+    color: #F9F9F9;
+    font-family: 'Nunito';
+    font-size: 25px;
+    margin: 5px;
+    border-radius: 15px;
 }
+
+.navbar .logo-holder{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.navbar .button-holder{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.navbar .search-bar{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 10px;
+}
+
+input[type=text] {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/images/searchicon.jpg');
+    background-position: 7px 7px; 
+    background-repeat: no-repeat;
+    background-size: 25px;
+    padding: 12px 20px 12px 40px;
+    
+}
+
+
+
+
+/* 
+font-family: 'Nunito', sans-serif;
+font-family: 'Nunito Sans', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto', sans-serif; */
