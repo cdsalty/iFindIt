@@ -6,8 +6,8 @@
 import axios from 'axios';
 
 export default (formData)=>{
-    console.log('movie Search action ran!')
-    console.log(formData)
+    // console.log('movie Search action ran!')
+    // console.log(formData)
     const moviePromise = axios({
         url: `http://localhost:3000/search`,
         method: 'POST',

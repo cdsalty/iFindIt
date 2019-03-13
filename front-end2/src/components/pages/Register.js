@@ -6,6 +6,7 @@ import SweetAlert from 'sweetalert-react';
 import "sweetalert/dist/sweetalert.css";
 
 
+
 class Register extends Component {
     constructor(){
         super()
@@ -50,6 +51,7 @@ class Register extends Component {
                     text={this.state.text}
                     onConfirm={() => this.setState({ showAlert: false })}
                 />
+                
                 <form onSubmit={this.registerHandler}>
                     <fieldset>
                         <label>Register</label>

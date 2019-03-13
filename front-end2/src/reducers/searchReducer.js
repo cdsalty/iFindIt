@@ -1,5 +1,9 @@
 
 
+
+
+
+
 // This is a reducer.
 // To make a reducer:
 // 1. make a function that has 2 params:
@@ -15,13 +19,15 @@
 // when dispatcher runs this function, you HAVE to return something even if no change
 
 function movieReducer(state = null, action){
-    if(action.type === "POP_MOVIE"){
-        // do stuff
+    if(action.type === 'MOVIE_SEARCH'){
         // console.log(action.payload.data)
+        // console.log("movie_search reducer hit")
         return action.payload.data;
-    }else {
+    }else{
         return state
     }
 }
 
 export default movieReducer;
+
+

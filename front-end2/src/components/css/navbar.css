@@ -1,8 +1,6 @@
 .banner{
     background-color: #2C3048;
-
-    
-    
+    position: static;
 }
 
 .banner button{
@@ -19,54 +17,43 @@
 .banner .logo-holder img{
     width: 100%;
     max-width: 420px;
-    /* grid-column-start: 1;
-    grid-column-end: -1;
-    grid-row-start: 1;
-    display: flex;
-    justify-content: center;
-    align-content: center; */
+    border: 2px solid #4D82A0;
+    border-radius: 14px;
 }
 
-.banner .button-holder{
-    /* grid-column-start: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto; */
+.banner .red{
+    border: 2px red solid;
+}
 
-    
+.banner #movieTitle{
+
+    max-width: 100%;
 }
 
 .banner .search-bar{
-    /* grid-column-start: 1;
-    grid-column-end: -1;
+    padding: 10px;
+    width: 50%;
+}
+
+.banner input{
+    min-width: 150px;
+    max-width: 350px;
+    width: 50%;
+}
+
+.banner .positioner{
+    position: relative;
+}
+
+.banner .searchForm{
     display: flex;
     justify-content: center;
-    align-content: center;
-    margin-bottom: 10px; */
-} 
-/* 
-input[type=text] {
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('/images/searchicon.jpg');
-    background-position: 7px 7px; 
-    background-repeat: no-repeat;
-    background-size: 25px;
-    padding: 12px 20px 12px 40px;
+}
+
+.banner .buttonHolder{
+    position: absolute;
+    top: 30%;
+    right: 2%;
     
-} */
+}
 
-
-
-
-/* 
-font-family: 'Nunito', sans-serif;
-font-family: 'Nunito Sans', sans-serif;
-font-family: 'Lato', sans-serif;
-font-family: 'Roboto', sans-serif; */

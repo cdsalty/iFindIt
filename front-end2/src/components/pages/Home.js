@@ -1,68 +1,68 @@
 import React, { Component } from 'react';
 import popMoviesAction from '../../actions/popMoviesAction';
-import { bindActionCreators} from 'redux'
+import { bindActionCreators } from 'redux'
 import { connect } from "react-redux";
 import "../css/home.css";
-import Poster from "../utilities/posters";
+import Poster from "../utilities/Poster";
 
 
 
-class Home extends Component{
-    constructor(){
+
+class Home extends Component {
+    constructor() {
         super()
         this.state = {
             popMovies: []
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         // console.log("component mounted")
         this.props.popMoviesAction()
         // console.log(this.props)
-        
+
     }
 
-    componentWillReceiveProps(newProps){
+    componentWillReceiveProps(newProps) {
         // console.log(newProps)
         this.setState({
 
-            popMovies: newProps.movie.map((movie, index)=>{
+            popMovies: newProps.movie.map((movie, index) => {
                 const imagePath = `http://image.tmdb.org/t/p/w300${movie.poster_path}`;
-                return(
-                    <Poster key={index} imagePath={imagePath} title={movie.original_title} />
+                return (
+                    <div key={index} className="col-12 col-sm-6 col-md-4 d-flex justify-content-center red">
+                        <Poster key={index} imagePath={imagePath} title={movie.original_title} />
+                    </div>
                     // <img key={index} src={imagePath} alt="movie poster"/>
                 )
             })
         })
     }
 
-    render(){
-    //    console.log(this.props)
+    render() {
+        //    console.log(this.props)
         return (
             <div className="home">
-            
-                
-                <div className="poster-wrapper">
-                    <div className="poster-holder">
+                <div className="container">
+                    <div className="row d-flex justify-content-center">
                         {this.state.popMovies}
                     </div>
                 </div>
-
             </div>
         )
     }
 }
 
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         popMoviesAction: popMoviesAction
-    },dispatch)
+    }, dispatch)
 }
 
 
-function mapStateToProps(state){
-    return{
-        movie : state.movie
+function mapStateToProps(state) {
+    return {
+        movie: state.movie
     }
 }
 
