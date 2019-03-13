@@ -6,12 +6,14 @@ import MovieSearch from './components/pages/MovieSearch';
 import ScraperResults from './components/pages/ScraperResults';
 import Home from './components/pages/Home';
 import './App.css';
+import Navbar from './components/Navbar';
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div>
+          <Navbar />
           <Route exact path='/' component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />

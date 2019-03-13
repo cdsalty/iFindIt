@@ -41,13 +41,8 @@ class Home extends Component{
        
         return (
             <div className="home">
-                <div className="logo-holder">
-                    <img src="/images/logo.png" alt="logo"/>
-                </div>
-                <div className="button-holder">
-                    <Link to="/login"><button className="button">Login</button></Link>
-                    <Link to="/register"><button className="button">Register</button></Link>
-                </div>
+            
+                
                 <div className="poster-wrapper">
                     <div className="poster-holder">
                         {this.state.popMovies}
