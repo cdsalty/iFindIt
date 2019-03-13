@@ -18,11 +18,10 @@ class Card extends Component{
     render(){
         // console.log(this.props)
         return(
-            <div>
+            <div className="card">
                 <img src={this.props.imagePath} alt={this.props.title + ' movie poster'}/>
-                <h1>{this.props.title}</h1>
+                <p>{this.props.title}</p>
                 <button onClick={this.titleSearch}>Where's it playing?</button>
-                
             </div>
         );
     }

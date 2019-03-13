@@ -2,33 +2,35 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Services from '../utilities/Services';
 
-class ScraperResults extends Component{
 
-    render(){
-        // console.log(this.props.search)
-        // console.log(typeof this.props.search)
-        if(this.props.search === null){
-            return(
-                <h1>Loading please wait</h1>
+class ScraperResults extends Component {
+
+    render() {
+        
+        if (this.props.title === null) {
+            return (
+                <div>
+                    
+                    <h1>Loading please wait</h1>
+                </div>
             )
-        }else{
-            const services = this.props.search.results.map((service, index)=>{
-                console.log(typeof service)
-                // console.log(Array.isArray(this.props.search))
-                if(service === "" | undefined | null){
-                    return("")
+        } else {
+            const services = this.props.title.results.map((service, index) => {
+                if (service === "" | undefined | null) {
+                    return ("")
 
-                }else{
-                    return(
-                        <h1>
-                            <Services key={index} service={service} />
-                        </h1>
+                } else {
+                    return (
+                        <div>
+                            
+                            <h1>
+                                <Services key={index} service={service} />
+                            </h1>
+                        </div>
                     )
                 }
             })
-            console.log(typeof services)
-            return(
-                // <h1>sanity check</h1>
+            return (
                 <div>
                     {services}
                 </div>
@@ -38,9 +40,9 @@ class ScraperResults extends Component{
 }
 
 
-function mapStateToProps(state){
-    return{
-        search: state.search
+function mapStateToProps(state) {
+    return {
+        title: state.title
     }
 }
 

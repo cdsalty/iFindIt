@@ -10,11 +10,13 @@ import { combineReducers } from 'redux';
 import authReducer from './authReducer';
 import movieReducer from './movieReducer';
 import scrapeReducer from './scrapeReducer';
+import searchReducer from './searchReducer';
 
 const rootReducer = combineReducers({
     auth: authReducer,
     movie: movieReducer,
-    search: scrapeReducer,
+    title: scrapeReducer,
+    search: searchReducer, 
 })
 
 export default rootReducer;
