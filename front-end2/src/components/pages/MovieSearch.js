@@ -13,16 +13,22 @@ class MovieSearch extends Component {
     movieSearchHandler = (event) => {
         event.preventDefault();
         const movieTitle = document.getElementById("movieTitle").value
+        console.log(movieTitle)
         this.props.movieSearchAction({
             movieTitle
         })
+        
 
     }
 
+    rerouteHandler = ()=>{
+        this.props.history.push('/search_results')
+    }
     
 
     render() {
-        console.log(this.props.movie)
+        // console.log(this.props)
+
 
         if (this.props.movie === null) {
             return (
@@ -36,7 +42,7 @@ class MovieSearch extends Component {
             const movieSearch = this.props.movie.results.map((movie, index) => {
                 const imagePath = `http://image.tmdb.org/t/p/w300${movie.poster_path}`
                 return (
-                    <Card key={index} imagePath={imagePath} releaseDate={movie.release_date} title={movie.title} />
+                    <Card key={index} imagePath={imagePath} releaseDate={movie.release_date} title={movie.title} reroute={this.rerouteHandler}/>
                 )
             })
             return (
@@ -55,7 +61,7 @@ class MovieSearch extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state.movie)
+    // console.log(state.movie)
     return {
         movie: state.movie
     }

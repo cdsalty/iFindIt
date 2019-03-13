@@ -14,7 +14,7 @@ import scrapeReducer from './scrapeReducer';
 const rootReducer = combineReducers({
     auth: authReducer,
     movie: movieReducer,
-    scrape: scrapeReducer,
+    search: scrapeReducer,
 })
 
 export default rootReducer;

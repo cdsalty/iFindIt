@@ -17,8 +17,8 @@
 }
 
 .banner .logo-holder img{
-    /* width: 100%;
-    max-width: 420px; */
+    width: 100%;
+    max-width: 420px;
     /* grid-column-start: 1;
     grid-column-end: -1;
     grid-row-start: 1;

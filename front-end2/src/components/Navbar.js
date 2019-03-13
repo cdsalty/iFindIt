@@ -7,7 +7,9 @@ class Navbar extends Component {
 
 
     render() {
+
         return (
+
             <nav className="navbar-nav">
                 <div className="myContainer">
                     <div className="row">
@@ -17,6 +19,7 @@ class Navbar extends Component {
                                     <input type="text" id="movieTitle" name="movieTitle" placeholder="Enter your movie search here" />
                                 </form>
                             </div>
+
                         </div>
                         </div>
                         <div className="row">
@@ -36,6 +39,7 @@ class Navbar extends Component {
                     </div>
 
                 </div>
+
             </nav>
 
         )

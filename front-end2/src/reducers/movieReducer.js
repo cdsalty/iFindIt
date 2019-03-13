@@ -20,7 +20,7 @@ function movieReducer(state = null, action){
         // console.log(action.payload.data)
         return action.payload.data;
     }else if(action.type === 'MOVIE_SEARCH'){
-        // console.log(action.payload.data)
+        console.log(action.payload.data)
         console.log("movie_search reducer hit")
         return action.payload.data;
     }else{

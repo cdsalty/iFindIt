@@ -104,8 +104,12 @@ router.post('/scraperResults',(req, res)=>{
   const results = scraper(scraperQuery)
   console.log("results inside promise " + results)
   results.then((results)=>{
-    
-    res.json(results)
+
+    const search = {
+      results
+    }
+
+    res.json(search)
   })
 })
 
