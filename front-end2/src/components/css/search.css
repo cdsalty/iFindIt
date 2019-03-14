@@ -57,3 +57,26 @@ body{
     background-color: #4D82A0;
     color: #F9F9F9;
  }
+
+ .yellow{
+    border: 50px solid yellow;
+ }
+
+.serviceLogo1{
+    min-width: 100px;
+    max-width: 350px;
+    width: 100%;
+ }
+
+.serviceLogo2{
+    min-width: 75px;
+    max-width: 300px;
+    width: 100%;
+
+}
+
+.serviceLogo3{
+    min-width: 75px;
+    max-width: 200px;
+    width: 100%;
+}

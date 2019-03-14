@@ -54,7 +54,7 @@ class Navbar extends Component {
                     </div>
                     <div className="row">
                         <div className="col-12 d-flex justify-content-center">
-                            <div className="search-bar red">
+                            <div className="search-bar">
                                 <form className="searchForm" onSubmit={this.movieSearchHandler}>
                                     <input type="text" className="search" id="smallSearch" name="movieTitle" placeholder="Enter a movie" />
                                 </form>
@@ -80,7 +80,7 @@ class Navbar extends Component {
                     </div>
                     <div className="row">
                         <div className="col-12 d-flex justify-content-center">
-                            <div className="search-bar red">
+                            <div className="search-bar">
                                 <form className="searchForm" onSubmit={this.movieSearchHandler2}>
                                     <input type="text" id="medSearch" name="movieTitle" placeholder="Enter a movie" />
                                 </form>

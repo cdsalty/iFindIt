@@ -30,7 +30,7 @@ class Home extends Component {
             popMovies: newProps.movie.map((movie, index) => {
                 const imagePath = `http://image.tmdb.org/t/p/w300${movie.poster_path}`;
                 return (
-                    <div key={index} className="col-12 col-sm-6 col-md-4 d-flex justify-content-center red">
+                    <div key={index} className="col-12 col-sm-6 col-md-4 d-flex justify-content-center">
                         <Poster key={index} imagePath={imagePath} title={movie.original_title} />
                     </div>
                     // <img key={index} src={imagePath} alt="movie poster"/>
