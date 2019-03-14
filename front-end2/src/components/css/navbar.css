@@ -3,7 +3,7 @@
     position: static;
 }
 
-.banner button{
+.banner .button{
     background-color: #4D82A0;
     border: 2px solid #203E6E;
     padding: 10px;
@@ -13,11 +13,32 @@
     margin: 5px;
     border-radius: 15px;
 }
+.banner .button2{
+    background-color: #4D82A0;
+    border-color: #4D82A0;
+
+    display: inline-block;
+    font-weight: bold;
+    color: #F9F9F9;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* background-color: transparent;
+    border: 1px solid transparent; */
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+   
+}
 
 .banner .logo-holder img{
     width: 100%;
     max-width: 420px;
-    border: 2px solid #4D82A0;
+    border: 2px solid red;
     border-radius: 14px;
 }
 
