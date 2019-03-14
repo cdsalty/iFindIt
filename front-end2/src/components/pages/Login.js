@@ -71,9 +71,9 @@ class Login extends Component {
                                     </div>
                                     <div>
                                         <label><p>Password: </p></label>
-                                        <input type="password" name="password" id="password" placeholder='stuff'/>
+                                        <input type="password" name="password" id="password"/>
                                     </div>
-                                    <button className="button2">Submit!</button>
+                                    <button className="button2">Login</button>
                                 </fieldset>
                             </form>
                         </div>
