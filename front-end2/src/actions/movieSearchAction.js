@@ -9,7 +9,7 @@ export default (formData)=>{
     // console.log('movie Search action ran!')
     // console.log(formData)
     const moviePromise = axios({
-        url: `http://localhost:3000/search`,
+        url: `${window.apiHost}/search`,
         method: 'POST',
         data: formData
     })
