@@ -9,7 +9,7 @@ export default (formData)=>{
     console.log('register action ran!')
     console.log(formData)
     const registerPromise = axios({
-        url: `${window.apiHost}register`,
+        url: `http://localhost:3000/register`,
         method: 'POST',
         data: formData
     })

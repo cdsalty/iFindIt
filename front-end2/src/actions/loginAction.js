@@ -9,7 +9,7 @@ export default (formData)=>{
     console.log('login action ran!')
     console.log(formData)
     const loginPromise = axios({
-        url: `${window.apiHost}/login`,
+        url: `http://localhost:3000/login`,
         method: 'POST',
         data: formData
     })
