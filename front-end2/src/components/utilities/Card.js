@@ -19,9 +19,9 @@ class Card extends Component{
         // console.log(this.props)
         return(
             <div className="card">
+                <button className="button" onClick={this.titleSearch}>Where's it playing?</button>
                 <img src={this.props.imagePath} alt={this.props.title + ' movie poster'}/>
                 <p>{this.props.title}</p>
-                <button onClick={this.titleSearch}>Where's it playing?</button>
             </div>
         );
     }

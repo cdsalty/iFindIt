@@ -38,8 +38,8 @@ class Navbar extends Component {
                     <div className="row">
                         <div className="col-12 d-flex justify-content-center">
                             <div className="loginHolder d-flex space-between">
-                                <Link to="/login"><button className="button">Login</button></Link>
-                                <Link to="/register"><button className="button">Register</button></Link>
+                                <Link to="/login"><button className="button2">Login</button></Link>
+                                <Link to="/register"><button className="button2">Register</button></Link>
                             </div>
                         </div>
                     </div>
@@ -65,8 +65,8 @@ class Navbar extends Component {
                 </div>
                 <div className="d-none d-md-block positioner">
                     <div className="loginHolder d-flex space-between buttonHolder">
-                        <Link to="/login"><button className="button">Login</button></Link>
-                        <Link to="/register"><button className="button">Register</button></Link>
+                        <Link to="/login"><button className="button2">Login</button></Link>
+                        <Link to="/register"><button className="button2">Register</button></Link>
                     </div>
                     <div className="row">
                         <div className="col-12 d-flex justify-content-center m-3">

@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import SweetAlert from 'sweetalert-react';
 import "sweetalert/dist/sweetalert.css";
+import '../css/login.css';
 
 
 
@@ -14,7 +15,7 @@ class Login extends Component {
         this.state = {
             showAlert: false,
             title: '',
-            text: "", 
+            text: "",
         }
     }
 
@@ -28,21 +29,21 @@ class Login extends Component {
         });
     }
 
-    componentWillReceiveProps(newProps){
+    componentWillReceiveProps(newProps) {
         console.log(newProps)
-        if(newProps.auth.message === "invalidUser"){
+        if (newProps.auth.message === "invalidUser") {
             this.setState({
                 showAlert: true,
                 title: 'No User',
-                text: "This email is not in our system.", 
+                text: "This email is not in our system.",
             })
-        }else if(newProps.auth.message === "wrongPassword"){
+        } else if (newProps.auth.message === "wrongPassword") {
             this.setState({
                 showAlert: true,
                 title: 'Wrong Password',
-                text: "The password you have entered is incorrect.", 
+                text: "The password you have entered is incorrect.",
             })
-        }else if(newProps.auth.message === "welcome"){
+        } else if (newProps.auth.message === "welcome") {
             this.props.history.push('/search')
         }
     }
@@ -51,35 +52,40 @@ class Login extends Component {
     render() {
         // console.log(this.props)
         return (
-            <div>
+            <div className="login">
                 <SweetAlert
                     show={this.state.showAlert}
                     title={this.state.title}
                     text={this.state.text}
                     onConfirm={() => this.setState({ showAlert: false })}
                 />
-                
-                <form onSubmit={this.loginHandler}>
-                    <fieldset>
-                        <label>Login</label>
-                        <div>
-                            <label>Email: </label>
-                            <input type="email" name="email" id="email" />
+                <div className="container">
+                    <div className="row ">
+                        <div className="col-12 d-flex justify-content-center">
+                            <form className="loginForm" onSubmit={this.loginHandler}>
+                                <fieldset>
+                                    <label><h1>Login</h1></label>
+                                    <div>
+                                        <label><p>Email:</p></label>
+                                        <input type="email" name="email" id="email" />
+                                    </div>
+                                    <div>
+                                        <label><p>Password: </p></label>
+                                        <input type="password" name="password" id="password" placeholder='stuff'/>
+                                    </div>
+                                    <button className="button2">Submit!</button>
+                                </fieldset>
+                            </form>
                         </div>
-                        <div>
-                            <label>Password: </label>
-                            <input type="password" name="password" id="password" />
-                        </div>
-                        <button>Submit!</button>
-                    </fieldset>
-                </form>
+                    </div>
+                </div>
             </div>
         )
     }
 }
 
-function mapStateToProps(state){
-    return{
+function mapStateToProps(state) {
+    return {
         auth: state.auth
     }
 }
