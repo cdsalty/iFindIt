@@ -4,6 +4,7 @@ import './css/navbar.css';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import movieSearchAction from '../actions/movieSearchAction';
+import resetMovieAction from '../actions/resetMovieAction';
 
 class Navbar extends Component {
 
@@ -11,6 +12,7 @@ class Navbar extends Component {
         event.preventDefault();
         const movieTitle = document.getElementById("smallSearch").value
         // console.log(movieTitle)
+        this.props.resetMovieAction()
         this.props.movieSearchAction({
             movieTitle
         })
@@ -22,6 +24,7 @@ class Navbar extends Component {
         event.preventDefault();
         const movieTitle = document.getElementById("medSearch").value
         // console.log(movieTitle)
+        this.props.resetMovieAction()
         this.props.movieSearchAction({
             movieTitle
         })
@@ -97,7 +100,8 @@ class Navbar extends Component {
 
 function mapDispatchToProps(dispatch){
     return bindActionCreators({
-        movieSearchAction: movieSearchAction
+        movieSearchAction: movieSearchAction,
+        resetMovieAction: resetMovieAction,
     },dispatch)
 };
 

@@ -23,6 +23,8 @@ function movieReducer(state = null, action){
         // console.log(action.payload.data)
         // console.log("movie_search reducer hit")
         return action.payload.data;
+    }else if(action.type === "RESET_MOVIE"){
+        return action.payload
     }else{
         return state
     }
