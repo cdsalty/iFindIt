@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators} from 'redux';
 import titleSearchAction from '../../actions/titleSearchAction';
+import resetScrapeAction from '../../actions/resetScrapeAction';
 
 class Card extends Component{
 
     titleSearch = ()=>{
         const scrapeQuery = `${this.props.title} movie`
-        console.log(scrapeQuery)
+        // console.log(scrapeQuery)
+        this.props.resetScrapeAction()
         this.props.titleSearchAction({
             scrapeQuery
         })
@@ -30,7 +32,8 @@ class Card extends Component{
 
 function mapDispatchToProps(dispatch){
     return bindActionCreators({
-        titleSearchAction: titleSearchAction
+        titleSearchAction: titleSearchAction,
+        resetScrapeAction: resetScrapeAction
     }, dispatch)
 }
 

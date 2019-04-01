@@ -6,8 +6,8 @@
 import axios from 'axios';
 
 export default (formData)=>{
-    console.log('title action ran!')
-    console.log(formData)
+    // console.log('title action ran!')
+    // console.log(formData)
     const scraperPromise = axios({
         url: `${window.apiHost}/scraperResults`,
         method: 'POST',

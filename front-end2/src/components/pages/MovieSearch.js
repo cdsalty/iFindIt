@@ -25,9 +25,9 @@ class MovieSearch extends Component {
             return (
                 <div>
                     <div className="container">
-                        <div className="row">
+                    <div className="row">
                             <div className="col-12 d-flex justify-content-center mt-5">
-                                <h1>Search for a movie!</h1>
+                                <img src="/images/Rolling-1s-200px.gif" alt="loading gif" />
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ class MovieSearch extends Component {
 
 
 function mapStateToProps(state) {
-    console.log(state.search)
+    // console.log(state.search)
     return {
         search: state.search
     }
