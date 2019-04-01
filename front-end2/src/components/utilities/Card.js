@@ -19,10 +19,17 @@ class Card extends Component{
 
     render(){
         // console.log(this.props)
+        let imageSrc= ""
+        if(this.props.imagePath.endsWith("null")){
+            imageSrc = '/images/defaultMovie.jpg'
+        }else{
+            imageSrc = this.props.imagePath
+        }
+
         return(
             <div className="card">
                 <button className="button" onClick={this.titleSearch}>Where's it playing?</button>
-                <img src={this.props.imagePath} alt={this.props.title + ' movie poster'}/>
+                <img src={imageSrc} alt={this.props.title + ' movie poster'}/>
                 <p>{this.props.title}</p>
             </div>
         );
