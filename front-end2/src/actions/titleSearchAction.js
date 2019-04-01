@@ -9,7 +9,7 @@ export default (formData)=>{
     console.log('title action ran!')
     console.log(formData)
     const scraperPromise = axios({
-        url: `http://localhost:3000/scraperResults`,
+        url: `${window.apiHost}/scraperResults`,
         method: 'POST',
         data: formData
     })
