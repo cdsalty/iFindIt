@@ -13,7 +13,7 @@ export default (formData)=>{
         method: 'POST',
         data: formData
     })
-    // console.log(moviePromise)
+    console.log(moviePromise)
     return{
         type: 'MOVIE_SEARCH',
         payload: moviePromise

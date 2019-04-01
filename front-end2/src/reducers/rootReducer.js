@@ -11,14 +11,13 @@ import authReducer from './authReducer';
 import movieReducer from './movieReducer';
 import scrapeReducer from './scrapeReducer';
 import searchReducer from './searchReducer';
-import resetScrapeReducer from './resetScrapeReducer';
+
 
 const rootReducer = combineReducers({
     auth: authReducer,
     movie: movieReducer,
     title: scrapeReducer,
     search: searchReducer, 
-    resetScrape: resetScrapeReducer,
 })
 
 export default rootReducer;

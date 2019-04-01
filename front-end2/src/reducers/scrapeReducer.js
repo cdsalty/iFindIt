@@ -14,11 +14,15 @@
 // 4b. If I don't care, return state (old state)
 // when dispatcher runs this function, you HAVE to return something even if no change
 
-function scrapeReducer(state = null, action){
-    if(action.type === "TITLE_SEARCH"){
+function scrapeReducer(state = null, action) {
+    if (action.type === "TITLE_SEARCH") {
         console.log(action.payload.data)
         return action.payload.data;
-    }else{
+    } else if (action.type === "RESET_SCRAPE") {
+        console.log("scrape reducer ran")
+        console.log(action.payload)
+        return action.payload
+    } else {
         return state
     }
 }

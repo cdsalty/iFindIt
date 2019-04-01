@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Services from '../utilities/Services';
 import '../css/search.css';
+import resetScrapeAction from '../../actions/resetScrapeAction';
+import { bindActionCreators } from 'redux';
 
 
 class ScraperResults extends Component {
+
 
     render() {
         console.log(this.props.title)
@@ -75,4 +78,10 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(ScraperResults);
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        resetScrapeAction: resetScrapeAction
+    }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ScraperResults);
