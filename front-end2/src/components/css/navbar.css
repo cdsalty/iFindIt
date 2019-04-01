@@ -73,9 +73,14 @@
 }
 
 .banner .buttonHolder{
-    position: absolute;
-    top: 30%;
-    right: 2%;
+    align-items: center;
     
 }
 
+/* .banner .red{
+    border: 2px solid red;
+} */
+
+.banner .offset{
+    padding-left: 15%;
+}

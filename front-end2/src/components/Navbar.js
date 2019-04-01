@@ -67,19 +67,19 @@ class Navbar extends Component {
                     </div>
                 </div>
                 <div className="d-none d-md-block positioner">
-                    <div className="loginHolder d-flex space-between buttonHolder">
-                        <Link to="/login"><button className="button2">Login</button></Link>
-                        <Link to="/register"><button className="button2">Register</button></Link>
-                    </div>
+
                     <div className="row">
-                        <div className="col-12 d-flex justify-content-center m-3">
+                        <div className="col-12 d-flex justify-content-center m-3 offset">
                             <Link to="/" >
                                 <div className="logo-holder">
                                     <img src="/images/logo.png" alt="logo" />
                                 </div>
                             </Link>
+                        <div className="loginHolder d-flex space-between buttonHolder">
+                            <Link to="/login"><button className="button2">Login</button></Link>
+                            <Link to="/register"><button className="button2">Register</button></Link>
                         </div>
-
+                        </div>
                     </div>
                     <div className="row">
                         <div className="col-12 d-flex justify-content-center">
@@ -98,12 +98,12 @@ class Navbar extends Component {
     };
 }
 
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
     return bindActionCreators({
         movieSearchAction: movieSearchAction,
         resetMovieAction: resetMovieAction,
-    },dispatch)
+    }, dispatch)
 };
 
 
-export default connect(null,mapDispatchToProps)(Navbar);
+export default connect(null, mapDispatchToProps)(Navbar);
