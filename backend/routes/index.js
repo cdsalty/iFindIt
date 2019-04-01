@@ -76,7 +76,7 @@ router.post('/register', (req, res) => {
 router.post('/search',(req, res)=>{
     console.log(req.body)
     const movieTitle = req.body.movieTitle
-    const movieUrl = `https://api.themoviedb.org/3/search/movie?api_key=fec8b5ab27b292a68294261bb21b04a5&language=en-US&query=${movieTitle}&page=1&include_adult=true`
+    const movieUrl = `https://api.themoviedb.org/3/search/movie?api_key=fec8b5ab27b292a68294261bb21b04a5&language=en-US&query=${movieTitle}&page=1&include_adult=false`
     axios.get(movieUrl)
     .then((results)=>{
       // console.log(results.data)
